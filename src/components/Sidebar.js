@@ -1,8 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Menu } from "primereact/menu";
+import React from 'react';
+import { Menu } from 'primereact/menu';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../auth/useAuth';
 
 const Sidebar = () => {
+    const { signout } = useAuth();
     const items = [
         {
             label: "Dashboard",
@@ -73,13 +75,18 @@ const Sidebar = () => {
                     </div>
                 )
             }
-        }
+        },
+        {
+            label: "Sign Out",
+            icon: "pi pi-sign-out",
+            command: () => signout()
+        },
     ];
 
     return (
-        <div className="sidebar">
+        <div>
             <h3>Sidebar</h3>
-            <Menu model={items} />
+            <Menu model={items} className="sidebar" />
         </div>
     )
 }
