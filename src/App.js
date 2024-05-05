@@ -4,6 +4,7 @@ import DashboardAdminPage from './pages/admin/DashboardAdminPage';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import HomePage from './pages/HomePage';
 import SignInPage from './pages/SigninPage';
+import KategoriAdminPage from './pages/admin/KategoriAdminPage';
 
 const App = () => {
   return (
@@ -14,6 +15,11 @@ const App = () => {
         <Route path="/admin/dashboard" element={
           <ProtectedRoute>
             <DashboardAdminPage />
+          </ProtectedRoute>
+        } />
+        <Route path="/admin/kategori" element={
+          <ProtectedRoute>
+            <KategoriAdminPage />
           </ProtectedRoute>
         } />
       </Routes>
